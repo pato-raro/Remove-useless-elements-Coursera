@@ -1,0 +1,122 @@
+/* ==UserStyle==
+@name           Coursera: Remove useless elements
+@namespace      USO Archive
+@author         minhtri
+@description    Minimal code to make Coursera less distracting, this code is based on sglavoie's Coursera: enlarger videos on larger screen 20200714.3.10.
+@version        20210305.1.0
+@license        CC0-1.0
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("coursera.org") {
+    /*
+*
+	Feel free to adjust to your own needs.
+*
+*/
+    /* Page header */
+    .rc-DesktopHeaderControls {
+        display: none;
+    }
+    /* Top navigation bar */
+    .rc-ItemNavigation {
+        top: 0;
+        height: 100%;
+    }
+
+    /* Top navigation bar */
+    .rc-ItemPrimaryNavigation {
+        height: 42px;
+        line-height: 42px;
+        border-bottom: 1px solid #6495ed96;
+    }
+
+    
+    
+    /*Video section*/
+    .rc-VideoItemWithHighlighting {
+        margin: 1em 0 0 0;
+        max-width: 1420px;
+        padding: 0 14px;
+        /* position of content/transcript in the main area */
+    }
+    /*Button in middle of video */
+    .rc-PlayButton button {
+        display: none;
+    }
+    .shareButton {
+        display: none;
+    }
+    .rc-VideoMiniPlayer.mini .rc-VideoMiniControls,
+    .rc-VideoMiniPlayer.mini .video-main-player-container {
+        width: 450px;
+        /* width of video when scrolling down */
+        right: 0;
+        bottom: 0;
+        /* remove space around video player so it appears in the bottom right corner of the screen */
+    }
+    /* Bar with icons under video (save note, Discuss, flag...) */
+    .horizontal-box.wrap,
+    .pagination-controls-container .box.wrap,
+    .pagination-controls-container.wrap,
+    .search-bar .input-area.wrap,
+    .search-bar.wrap {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    
+    
+    /*Right pane section */
+    .rc-VideoHighlightSidebar.expanded .rc-VideoHighlights {
+        width: 455px;
+        /* width of "notes" section on the right side */
+        border-left: 1px solid rgba(0, 0, 0, .12);
+        margin-top: -3px;
+        overflow-x: hidden;
+    }
+    .rc-HighlightSidebarTogglePanel {
+        display: none;
+    }
+
+    /* Size of text in notes section */
+    .rc-HighlightTranscript {
+        font-size: 18px;
+    }
+    
+    /* Right pane icon */
+    .rc-HighlightSidebarTogglePanel .notes-tool-button {
+        padding: 7px;
+        background-color: #6495ed96;
+        border-radius: 0;
+    }
+
+    /* Right pane */
+    .rc-HighlightSidebarTogglePanel {
+        box-shadow: none;
+        border-left: 1px solid #6495ed96;
+        margin-top: -3px;
+    }
+    .rc-HighlightSidebarTogglePanel .notes-tool-button.active {
+        background-color: #f3f3f3;
+        border-radius: 0;
+    }
+
+    .rc-VideoHighlightSidebar {
+        top: 45px;
+        /* move "notes" section to the top of the page */
+        height: calc(100% - 45px);
+        /* make "notes" section reach the bottom of the page */
+        box-shadow: none;
+    }
+
+
+    /* Remove other elements / distractions */
+    div.rc-Like,
+    div.rc-Dislike,
+    h4.video-name,
+    select#select-language,
+    a.volunteer-link {
+        display: none;
+    }
+}
